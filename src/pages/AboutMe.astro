@@ -1,49 +1,152 @@
 ---
-title: "About Me - Marc Puig López";
+title: "About Me";
+import { Button } from "@nextui-org/react";
+
+const skills = [
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABmklEQVR4nN2UvUoDQRDHU6qg4AMomEoFe1tFCCKW9mLAV/ADwTyANrYGLNKds4mIGEEkTZDzP3MKwWDhC4iFqIWlyuY0Xi63d2uu0oWBZXd2fzsf/81k/tUQ4hdR/JHO8GwEsOJmegDfxgBwlhbAxFVzihSKqSMg7MelqBB0rh/VBxPrdiwDIcC2GUCcDzqDkE0CuI471nHmECvm15DkOkOWaR+MCyY8RVlX55HkjIBrx50MOnuERR/Mp7Y18MrehDnckjsU6oh8C1CRKRDmokwUdoNn9B2xOe0ImbCRVAMhWbcSWbTYcCcEJ8ra6VPYaUesuGkBsBQbXS1/PahkJbJosaHWOGkMS1mWuiGy0AIQVwP+RZsU/YiN+Eav1Q5qfUIyIwqbTLwlSmb1ml8DeIEUFZIBAbGxwqM4MmryRQUjQvwQ7rr4FIXExoR3Vsy6o4Rk3Dc9Z+g9a5GZxCa/sFiRfQ/9wfUKqFt8jn5uCVmPsOr3PL/GXPomis9Z8ZqOPNPLuHQu+1HGvBD2WOFem57rNb3X06V/anwCz154evXh0tcAAAAASUVORK5CYII=",
+		name: "HTML",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADA0lEQVR4nO1WW4hNYRQ+g3EZRI0hihelXMaDaFwiLzzgjTDKK5KIkhfXiDfRJE2URon2XuvMOEI8OMk0Y69v7ZkjRzJuuTyYiVzGJRO2/j0zp332ucw0c6ao+ep/2uv/17e+tf7v35HIIAbxP0FjWgIblUpyGowrynJeSQ6CsUKrtXhAk8NGJUhaleFlXYT3ynKsubZ5fEETx+PxYWCcypk4k8g7IdnseV5Rv5NrtRYrg9ITSI2wzGm50TLCVAvCEtMSZfkUjAMj5kSd0v4RYFwMVwiSP0p40qmKLuyOTVxMjAbjuLJ0BNR4rbYu7TMBN+osUsKXfJKD0CAsC1Kka7UcjEeBmF/KcjR+IT7SfK+vqx8Lwk0Q9ic4MbFHEmLLYiXZq6w7leWEktSF5TZJwDhsWdZQn0RMS/wbkq7cRzDugqUt0M7bfVLGJIKN5abP6UTkjrJOTpEnWauMD7kV1NV9IpCmEMtGsLQHKm0NHtx4tXGSuZ5gtITIXs9boWu7czXqrPGXrRUNVsOoXPFN1v1ZyvI4lCCuJLvA2ApGNVi+Br6/0JhOyDjIv/OEPWC8zZTLTLfcckk2dPc6iK6+V/m3JN/QsjyQWpmapYqmss4e9spsHrrkLMt1c0ByLYMI4Y0Z5qSVHJ6xSaM6HYSXgQ0/jGwuyRbjasp6QEnuZfqBnDOVZyVS504BYZVZbtSdmat9ESfqzPDZpbvdMyU5q7azPmklx6SI1mq5Ei6HFEk6tjM7MmBmQ/LNJ2PptBQRW1cqy6tA3Hdl2R70f+OAZoC9Q96QHknA+Dkj2TUDSSV8zjI87YhiW0C50rAPGFc0fQbjiDGern1Pe+V4QRjWyjoPjH3G90OK2GrpOD/O84pA2NGpQM6BlUh/YBnXY+wGy8/Awc9d25nfHWNmwPd3lt/hQTWOGSkE1NaK9GGVDhDOmKfZ3ATfuEL+ryQnI4VEk9VUBkK0d14hNdkMqyBQ0k2mDTmcrs3Yb0H+iPLBVNf52kmVslwycoOxLt+bMYhB/JP4C96vN0zkf7tiAAAAAElFTkSuQmCC",
+		name: "TailwindCss",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABQUlEQVR4nO2WvU7DMBSFPSCEhMSLsDLBCzDxFoidkR0KKwLBxt9G7uUVvNb33EodKiYGkICpA/AABLlJaWlCwo8bCeEjeYjte/zJdpJjTFTUhHqXvVll2VOSR2WkIRpIHpSl5b1NnZRkN9TCBRDGTi0ABrRIJZFlE0ggrAx3onay5rShFv+2r0YAjkeAeAnT//0aTkt/F0AnCtsX7QVlOVXCixL6SnJsT+xcYwBKclb405HsNwiAZ//sErf4G5+fA7DcZX2y9aWAERzgyq2D5DXf+hthWWsUwKvDbhUk12NJZ8NM60OknxRaa2dA2MwA5DYYAPJI5mPUe5Ri3JfN7SRuKTsK9Ks9q30+yKfXYqrF9nAchMOS8YNRfVU6HvnUxfKW3wlP7IvGb3v3vDvvPz7K8jRoJEe+rwqgzCcqyuR6A3m9i+NHX+FyAAAAAElFTkSuQmCC",
+		name: "JavaScript",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAADyElEQVR4nMVVW2icVRCO94Ja8KUiIuIF0QexolipiogFUSleqKKlvoiIL9aWQt9qFXy1llbBQkGNZc/5z3/ORiW0COISzZ6ZMzN/XdOItRRRWlrtTSEJpbmtzB+yJLtNNoLgPP3/ucw3M983c3p6/g9rbm9ejhnsQotZMmn9Quckl1Xi6S0OvM45d9mSAZKNghZGwcIwGJhAC+fIxrUtx17u5MAD4vkX8bSLAzMH3rkk543exgowcZoM3aT/tU9qyyADByZOgYPdUpUXONAprvIbs1E3QmMFezqnZ7sCoBl8Bmw835FVHl8EG6fU+cGA97TvS+DDqZru6ApAGW0AWx9rX+ccN0ejAHy8yNPjHfuBfkx9aWVXgLRvcGU09al5oIZWo4FJtLiJclotnk5IVW5rAzgFX8L1XQGazeal0dSnk4N3McN9KYMCTBzXNc2MPYkE+ls8HRVPOwpPr1OVnuRAI81m85IFHddqtWXgYAfYeAZMbEIlXsAMhtWprqHDrWTwlSJP95OnNRLoa/FUiKePtf4SeJI9H5CQnuuQbMrSxmjq42DjX8nhTrSQoYUT5OKjGrk4eFjPRRdvxM9xuX4XvrhZPJ8hT7eKJydBNoqX9eLpew78E3t+qHSODt9T8rASt8+VqjpGC6chg2/LIBz0a2YaqXjZomsSZFsZtafTw274mtn7hae1JU9Bnu5R8pKLr7WXDG08rNofODBwg0Zelm0GoATRTBq9jasl8EkJtLf9/owY+JgCTFBGr3YC4M8LAnieUIDBLwavZU9/iqfP2u+Ll8c40G89kMM2sHFcJTi3ROpcS4QWazM84VclgOcJDrx5xgm9LZ76lYuh/qHrWiWq0vMzwPJEi2SVIth4MmXwDlj4tEVypT4tOT6i5zQbjbqD5MC97Hkr5/yyBBqcR3KrJPtxOTrcAwZGNFK08TxkQGDjKJr62WRhi3Z50VfcpzJVcssh5/lD8XyIA2mXf6OzSvbIFYuOah126PB9yKAPMjhUZmdiq9F0sEngX9nzRxz4Tfb8lHgaO7L/yFU93QxyWKXKmpddwAehEid1HlFO94rnP4pqcdd8Uulo4YrbuwKootDE0fZ1tLhJ+0UC/S5enm3fl8B1qUrZkIsaVnDdxcY1WVqjmUngs9Ind7fvs+fGxcZ4h5W61y52eIv+O+euJAd7ywfHQoUCvdT+4KhEFXhuNy9qYOGHaOIYWhwCEy+ggRHKYMPsvtafA31XPpmBdqua9OlcknM1VVLK4AO0GJJLHWNk1rjKD6iKtLH+1aP/X9o/WvxO8WFaZtsAAAAASUVORK5CYII=",
+		name: "React.js",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABDUlEQVR4nNWVz0rDQBjEe1HwtRQpWA8efCfjI/QV6nw+hIfoznxeJK/QQq/1olCqbECJmjabP1L9YA/Jwvx2MjtkNNrX+G04d4gyvrrp7WOVe5Xnch+im0/aiVdEfAfgy4JfJAFkUjcAQ5oDaNUNoNUfcWA+6QIQdJYE+ISAIe0WMbQS33sPillx6MZrBxcC5w5m8V078V0ZgFlNwFkyoOkWKZ76R8Ccpzto6IH6Ahp7gJpPZLwaLIMihgxm8dSdQm7qwf8Yh4/d+CDwpeogn+VHvcUfb8KJwE1dBoMAZLzbFnI+CABcbgGsfeoHv+cAfOotHsfNj+sykOlyEEAcmU4F3sv4XDY79Yf+bd4BgJbG6PbCH44AAAAASUVORK5CYII=",
+		name: "Figma",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADDUlEQVR4nO1XOWgVYRB+RlFM4YWihWCjKHhUCmKhIogIUVARsRFEFDtLQdAnEYw2hqClWpjK3ZkNSdQy8cC87MxsgknwiIKIFxg1XmCUxJXZI2/3JfHtW7OVDvyQLHN8/z8z38zL5f5LCuls7JwlSHWC9CI4dfotl7W4rjuFkQ8I8ltBdmMH+L0AHXPzblUmwR3TXstAhWJAuico673j/e1/Vx1CWjdpgTuMjnkC1CDIw0HgN/oK+hoxgEA7/HR4IH4J8rVCc2Fh6sDt7e3THKAjAjTg345+KpA/5VpapJqRTzPQUABkkJGP9xl90ysK7oC9UYB7izmmm11QWJbUXnXVJlIfveozkbFYsjd8bkZ6KpZdUxH6mC+7xvPhAxkmoD3ljZAeBbk+13+rf0buL0V9CNL5ICUPyxow0ogqaw1Ev2vR9dzomdvd1D2ntEjJpA2C9i7Hot2O6awpbUX1FbzoSFkAEuRtfPLx8vk5CDxTkK+MdkecE56U5nwiv6kBaIrC3AY8AALcLMAvg9t+cwxnaWYAGOmB/79si+oZhjHVA+PXUT5LAHf9m/J1smi7bdiLQl1CWqX9H+2gDADw1pBwIjT8UZDaBOWkA86SJH5TA1DRHAvSGUG+7wePFeN3QtqZCYAuo2uBEhabvDmmg52L2eT9AmSG3ZANAFCq9Z78tfL/GB8tMj/ohK+ZAHDzbpUgPw50+wTolIN0kC0+KkC1evNghrRlAiCnek2ymoGfjyGh4r7wTEBWZAZARcesUrCSEgNfFaTLjHxWi690BFcC4IMqKr+XA5BU/M3JX9vKKjNw/egCgnRRKz5WWECDiQOrDVADI/3wbbk+0fhk4EvFFYy/6Dhl5MZw50sQuFqQTgjSp3BeqM+Kxrtt2isZqLWE6YYEZctENjoHGPgQI7+K2LSqr1xaIZ31QBf0FUJHOorH3Nqya7yWLI5kIos2pQ48kZBBy3XNYuQ7OvOD/fF2tP0coH2lW/OkiVj2YUZ6N07fD+gPk4o34DTitWTIeN6hWjFkdipnuX9dfgO+gyaJEuIqgQAAAABJRU5ErkJggg==",
+		name: "Node.js",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB0UlEQVR4nLWVz6tNURTHzxMDA0UGBkpJZiYG8mNsoJSJgRhI/AGGhigmMjDzI8qboHPW96IMhFzpdu893++6rp4RISIkKeWRH9na992n1HEf+x7f4VrrrM/aZ6+1dpb9gxy+wU1vvOGrsrrVztsLZew4FBw8W2vycDDMc2Pu0HeHbsr4Q9Du2gCCDg0qN+5vNpvz3XhD4BcWXDt2cs99hUOf3Tg5a5u6NrXETS/c9MBP+4LxAMZJN0738/by3+zwrTOnKvckJ29daS2K1Qs6UQkHu4IehRAmkgA9445YZa9Rbqzyq9DO6Ce4Lgng4HmHXscuqvL3L/cXO/hV0OFUQCu25cgY0504H2kA4yuZzswRc0rQy0SAvjl4ZFSMTEcd+pQK+PCnDvoVAx6X8X0igKXA63MALrjpYRoAOifw7ahpjXMg6FISoIdyy6DPjdur/ATXRL9M+9K3KPQ0tmvVtLrposCPcTclAQZVFtxbVaUXvn64to9l4yiEMCHoVtxJLLgp2jpXO8sEPnPwedxX2bgqG+VSNz520zuC22S6H39NLe/BrLp5d6VDT4YPzzSNm7O6JejA4D7Au7Unj3LzXcNH//Z/AdyzzuqZu+DJv/3oJ2yrY6IlVho9AAAAAElFTkSuQmCC",
+		name: "Mongo.db",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADyUlEQVR4nO1YX4hUZRS/WimW65ZSSIUkCC6k0EOCRkER+JAvvRSCJfgPSR96sZAoFATR13oKgqCth757zsyispAPrrXD7Nxzzt1ZllHXyZUESRHxX4Vi0Mj57je713H+3JmdXSTuDy4M833n3/fnnPP7PC9FihQpUqRIkSJFQxSzxWcFaS8DIyP9LsDXGelvBjorQEZQdo79MPaM97hBvpWnGPmgAN8W5Eqzj4FuCspXQ0NDT9bqqepg4B8L/YUlnfhS6C8sEaSfrB7kg60FsPCyAJNz7j8BOkFAHwd+8KoY6S2Z0mL9zcA7BPi0naPBAFMxO/JKXFflQGW+AJ20upB+qxdkM+h8Rv410k8nVV9TgcAEywX4fGSQy4KyvuVugbwjQBeckQvhQPhifHzUjD7PyJfd+JFW+uIQpKNup6+ob14zaHS6SpEAFfT8JzZkpFdl3E4U9Qg+7IisF6T70Y7K+4l0omyK5vO/4stbrQWAPnUrf3kMx17w2oQGbC96tAD7ascZ+HN3LG8UTGFlU1+MrNCE4Xbts5bGy4PlhQL0pxXIyAdehwj94F23andyA7me+FilUpnHwJnqfSkPlhc2TCDAeRfscZVraZiQNruVO5dIoAn0Yquu0KeP6qdlnnQr+3VdeaRvnC+XgkywLJFRRv7eCX0xE+etA5lgV7R6nKk3HvrB6wx0L7IXbHlI1g8+dH7cDzPBhsRGbWGKjs+bMw2AkNa4zFFqNEeLo0Sp9S8B6dP/QhOumq47tKcto1Ex4oqmvJkGEBUee87vNLWJ3O+O0nje5JcK8qhLIj+3bXSqGNWkv05RrdLN5uQGcj2CPOGCvepkJmovf1sGu/0lOm5A/7j5d4Ns8Frbzv9fAribxGA3kevmEWKkP6wCI72z4u1sX2IBGrbKsrJ2Vryd7TQqSIc6EuwAhLSu64WMfHrD9R4jM3VQSYeyNvJpe4NW4mLXWwlFlcSILxu9DmG5QXQpb89pM6dg4PdcJpgcPzH+nNcm9CJOtdMg++e0na5CkL5zQsPtZKQoi1DOZRGuXd05ITSKvMkvqm6f5uQkF4l9fjtGZC4pp46PKzmaE0pZhRyTp5XIT5N6HmTkrWRodcmUFtiLCNIXIm0TpFMxUl8smvxLj5B6pF9ce51vt9casqR+iuaeMsY8kUjQ8mPgHYx0rXXLQLcY+EsNru6zinsgqCX7SaFy0QOD1dP6WSUOfbSybA3IMPIZ+6ilxUdZFZDPyLsblX5tqxn5sIB80klSiEPlVY/q6/R9KUWKFClSpEjhdRkPALo1AXmmx+/KAAAAAElFTkSuQmCC",
+		name: "Express.js",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABDElEQVR4nOWVTQ6CMBCFu4Z4A72I0b3xevi3duuMGhPjBVzgzJhwBl2Ap8AUjaJQLNSVNpkdfV9feTNV6qeXbMQTpECAE0FOHwWcMPAomke+GwApeBF+Kw1xBHBMC+rKUnoGSOwKSDPxhfRNLtwBWF357xjoIkCz/Xrf+hpUlR0EaFbYqBMhSJNCYtDeQd5JAcDA4zrCcovryXSVRes1Ty7ApyMeBrSijh2gVIi2IYZt0//Q4gy8awzQ4gw8FOBzTXeJFeB+dfXETR2eZdgmglhZsXFG6ezaAFTTpbtPgKb5NNk6aAytAuSHoBsADP3xHIJuE5U/djgFToBoHvkZpORVyx6kjXhOAPX36wquQAz0vsHdDgAAAABJRU5ErkJggg==",
+		name: "Python",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADPklEQVR4nOVXbahlYxTeXIQxykgo8YsQUiKiFNNoEiUpkfI5RRlEDH4MJYNIPmtMGYZf71lr3zFGSXSU07lnP8+zb7dx/EA0PhqUH0YixNHa5+zpzDQ12veeucVTq7PPu/e717PW+65nvTvL/gsYDAYHbNu67ahFI9BP/UNkWrNoBOh8gMZXFiX1cjxEx180Xrhfnc+8NXOsHO/IOZDhiYrQ2sGBQUSOu5V04sScy3SZjN+HcxpfikzAsJyOz2X4qLTypIk5h+FqGf+sInc8XTl3nEvH7zS+qfU6OJsk5PhqlPYNY2MvxNhEI68h46fD6HV8PUbnI0NSui6bNJTrmiGB4qp6rJu6y2TYIUdv4gQCcq2W8eOU0tTYMtwRJLL9BRiWl46b6v80Piwvrl9wRymlKeY8j8575FiHHCvnNs0tiXv91D+irv/xPbGLZI6VNL5K4/0h140IyNEZrnlVdvfN2szJRV4c3W63Dxp/rvdG78gQH+W6aFwVQzNCKWW6tyEBra4EZheJvRn+kPMLGj6Q48nO5s7S3d5h2EHnxmxemm94UI6Xy+nynHGLqOvNuDcRKlvlWTT8LcNd85Ner6L9VYZWVfemNdEDQg3lNDq20/ltabiintdN3cNonJMRcd2YQEppSq5bZXhPxh/3XAIafoh7UQllXp4Wc+KAIsdrMqzVFh3e2Pk45Lo8HM2m2WPCilQcF7s7fmXFjXBcWz8b+yCqI1tIqFI7Duj4Rc4+nZ/JuHO3bDifyiYF5LhYjmkZv5Hzt8qqtoyODM+rpRULEvXcprkldD4qw1Y610ftN3lPmRcXNCIgxzOjdL7ftL8X08XZcn7XiACNt4wE5qeq3KZ15r+ZV6lhSytofHa4T7Auawo4rpTxw0pGq17Pn+n8hI53ZUi10bmFxq6cXw4llztpzMtWcem4GKGFmxsR6WzuLJXrfOXFbXQ+HqefOIKPCGwI6Y0sRQkWeXFKqGY9d1ieeG4kRMsaEWjv0XT2hZ73ToDhBhreHlXIY3X3bEZgY/tQOM4IiaXzzqonmG4vDauqg0l8FxhfHFYMtsv4tQyvB4l5Od7HZ9ipcSCpTa5LZlPv9AWT3Oz/hH8A5r7v926JWw8AAAAASUVORK5CYII=",
+		name: "Java",
+	},
+];
 ---
 
-<main class="max-w-3xl mx-auto py-20">
-	<section class="mb-8">
-		<h1 class="text-3xl font-bold mb-4">¡Hola, soy Marc Puig López!</h1>
-		<p class="text-gray-700 dark:text-gray-300">
-			Soy un ingeniero de software con experiencia en desarrollo frontend,
-			backend y full stack.
-		</p>
+<main class="max-w-5xl mx-auto py-20 flex">
+	<section class="p-5 w-2/5">
+		<div class="text-center">
+			<h1 class="dark:text-purple-300 text-5xl font-bold mb-4">Marc Puig</h1>
+			<div class="">
+				<span
+					class="bg-gray-300 text-gray-900 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300"
+					>Web designer</span
+				>
+				<span
+					class="bg-gray-300 text-gray-900 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300"
+					>Full Stack dev</span
+				>
+			</div>
+			<Button
+				color="secondary"
+				variant="ghost"
+				className="text-sm p-2 mt-4"
+				id="downloadCV">
+				Download Resume
+				<!--?xml version="1.0" encoding="utf-8"?--><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+				<svg
+					width="123px"
+					height="123px"
+					viewBox="-2.4 -2.4 28.80 28.80"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					stroke="#ffffff"
+					stroke-width="0.00024000000000000003"
+					transform="rotate(0)"
+					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke="#CCCCCC"
+						stroke-width="0.048"></g><g id="SVGRepo_iconCarrier">
+						<path
+							opacity="0.5"
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M3 14.25C3.41421 14.25 3.75 14.5858 3.75 15C3.75 16.4354 3.75159 17.4365 3.85315 18.1919C3.9518 18.9257 4.13225 19.3142 4.40901 19.591C4.68577 19.8678 5.07435 20.0482 5.80812 20.1469C6.56347 20.2484 7.56459 20.25 9 20.25H15C16.4354 20.25 17.4365 20.2484 18.1919 20.1469C18.9257 20.0482 19.3142 19.8678 19.591 19.591C19.8678 19.3142 20.0482 18.9257 20.1469 18.1919C20.2484 17.4365 20.25 16.4354 20.25 15C20.25 14.5858 20.5858 14.25 21 14.25C21.4142 14.25 21.75 14.5858 21.75 15V15.0549C21.75 16.4225 21.75 17.5248 21.6335 18.3918C21.5125 19.2919 21.2536 20.0497 20.6517 20.6516C20.0497 21.2536 19.2919 21.5125 18.3918 21.6335C17.5248 21.75 16.4225 21.75 15.0549 21.75H8.94513C7.57754 21.75 6.47522 21.75 5.60825 21.6335C4.70814 21.5125 3.95027 21.2536 3.34835 20.6517C2.74643 20.0497 2.48754 19.2919 2.36652 18.3918C2.24996 17.5248 2.24998 16.4225 2.25 15.0549C2.25 15.0366 2.25 15.0183 2.25 15C2.25 14.5858 2.58579 14.25 3 14.25Z"
+							fill="#ea99df"></path>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M12 16.75C12.2106 16.75 12.4114 16.6615 12.5535 16.5061L16.5535 12.1311C16.833 11.8254 16.8118 11.351 16.5061 11.0715C16.2004 10.792 15.726 10.8132 15.4465 11.1189L12.75 14.0682V3C12.75 2.58579 12.4142 2.25 12 2.25C11.5858 2.25 11.25 2.58579 11.25 3V14.0682L8.55353 11.1189C8.27403 10.8132 7.79963 10.792 7.49393 11.0715C7.18823 11.351 7.16698 11.8254 7.44648 12.1311L11.4465 16.5061C11.5886 16.6615 11.7894 16.75 12 16.75Z"
+							fill="#ea99df"></path>
+					</g></svg
+				>
+			</Button>
+		</div>
+		<img
+			src="./src/utils/img/MarcPhoto.png"
+			alt="Marc Puig López"
+			class="rounded-lg"
+		/>
+	</section>
+	<section class="p-5 w-3/5">
+		<div>
+			<h1 class="text-3xl font-bold mb-4">Sobre mí</h1>
+			<p class="text-gray-700 dark:text-gray-300 text-justify">
+				Hola! Me llamo Marc Puig López, y soy Ingeniero Informático de Gestión y
+				Sistemas de Información.
+
+				<br />
+				<br />
+
+				Mi objetivo actual es continuar formándome y ganando experiencia para
+				poder ampliar mis horizontes actuales y afrontar nuevos retos que
+				contribuyan al desarrollo de mi carrera profesional y personal.
+
+				<br />
+			</p>
+		</div>
+		<div class="pt-10">
+			<h3 class="text-3xl font-bold">Skills</h3>
+			<section class="w-full pt-5 text-sm">
+				<div
+					class="gap-5 w-full mx-auto grid grid-cols-5 bg-gray-200 dark:bg-purple-900 rounded-md p-5 pt-2 dark:bg-transparent">
+					{
+						skills.map((skill) => (
+							<div class="mx-auto grid content-between ">
+								<>
+									<img class="mx-auto mb-1 mt-3" src={skill.link} alt={skill.name} />
+									<span class=""> {skill.name}</span>
+								</>
+							</div>
+						))
+					}
+					
+				</div>
+			</section>
+		</div>
 	</section>
 
-	<section class="mb-8">
-		<h2 class="text-2xl font-bold mb-4">Experiencia Profesional</h2>
-		<p class="text-gray-700 dark:text-gray-300">
-			Tengo una sólida carrera en desarrollo de software, trabajando en
-			proyectos desafiantes y emocionantes. Mi experiencia incluye trabajos en
-			el desarrollo tanto del frontend como del backend, abarcando tecnologías
-			modernas y frameworks.
-		</p>
-	</section>
+	
+	<script>
+		const CVButton = document.getElementById("downloadCV");
 
-	<section class="mb-8">
-		<h2 class="text-2xl font-bold mb-4">Habilidades Técnicas</h2>
-		<ul class="list-disc pl-4">
-			<li class="text-gray-700 dark:text-gray-300">
-				Desarrollo Frontend: HTML, CSS, JavaScript, React, etc.
-			</li>
-			<li class="text-gray-700 dark:text-gray-300">
-				Desarrollo Backend: Node.js, Express, Django, etc.
-			</li>
-			<li class="text-gray-700 dark:text-gray-300">
-				Desarrollo Full Stack: Integración de sistemas y arquitecturas.
-			</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2 class="text-2xl font-bold mb-4">Contáctame</h2>
-		<p class="text-gray-700 dark:text-gray-300">
-			¡Si deseas saber más sobre mi experiencia o trabajar juntos en un proyecto
-			emocionante, no dudes en contactarme!
-		</p>
-		<p class="text-blue-500 hover:underline dark:text-blue-400">
-			<a href="mailto:tu@email.com">tu@email.com</a>
-		</p>
-	</section>
+		CVButton.addEventListener("click", function () {
+			window.open("./src/utils/CV/CV_MarcPuigLópez.pdf");
+		});
+	</script>
 </main>
