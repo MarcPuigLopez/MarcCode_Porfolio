@@ -2,43 +2,52 @@
 title: "Header";
 
 import ThemeIcon from "../components/ThemeIcon.astro";
-import { Link } from "@nextui-org/react";
+
 ---
 
 <header
-	class="py-8 mx-auto items-center justify-between align-middle sticky top-0 lg:py-2 px-10 xl:px-72 2xl:px-96 flex bg-gray-200 dark:bg-transparent z-20">
+	class="header py-8 mx-auto items-center justify-between align-middle sticky top-0 lg:py-2 px-10 xl:px-72 2xl:px-96 flex
+		bg-transparent dark:bg-transparent transition-all duration-300 z-20 scale-110">
 	<div class="">
 		<img
-			src="./src/utils/img/blackLogo.png"
-			alt="Marc Puig Logo"
+			srcset="./src/utils/img/blackLogo.png"
+			alt="Marc Puig Dark Logo"
 			class="dark:block hidden w-16 h-16 mx-16"
 		/>
 		<img
 			src="./src/utils/img/whiteLogo.png"
-			alt="Marc Puig Logo"
+			alt="Marc Puig Light Logo"
 			class="dark:hidden block w-16 h-16 mx-16"
 		/>
 	</div>
 
 	<div class="">
-		<nav class="flex flex-wrap justify-center gap-10 transition-all">
+		<nav
+			class="flex flex-wrap justify-center gap-10 transition-all [&>a]:cursor-pointer">
 			<a
-				href="#"
+				id="HomeButton"
+				title="Click to go to Home"
+				href="#Home"
 				color="foreground"
 				class="link link-underline link-underline-black">Home</a
 			>
 			<a
-				href="#"
+				id="AboutMeButton"
+				title="Click to go to About Me"
+				href="#AboutMe"
 				color="foreground"
 				class="link link-underline link-underline-black">About Me</a
 			>
 			<a
-				href="#"
+				id="ProjectsButton"
+				title="Click to go to Projects"
+				href="#Projects"
 				color="foreground"
 				class="link link-underline link-underline-black">Projects</a
 			>
 		</nav>
 	</div>
+
 	<div class="mx-16 w-16">
 		<li
 			class="text-medium whitespace-nowrap box-border list-none data-[active=true]:font-semibold hidden sm:flex">
@@ -169,3 +178,24 @@ import { Link } from "@nextui-org/react";
 		}
 	</style>
 </header>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		function handleScroll() {
+			if (window.scrollY > 50) {
+				document
+					.querySelector(".header")
+					.classList.add("scale-100", "backdrop-blur-md");
+				document.querySelector(".header").classList.remove("scale-110");
+			} else {
+				document.querySelector(".header").classList.add("scale-110");
+				document
+					.querySelector(".header")
+					.classList.remove("scale-100", "backdrop-blur-md");
+			}
+		}
+
+		// Agregar el evento de desplazamiento cuando el documento esté completamente cargado
+		document.addEventListener("scroll", handleScroll);
+	});
+</script>

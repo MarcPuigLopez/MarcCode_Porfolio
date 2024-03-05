@@ -22,6 +22,9 @@ export default {
 				160: "40rem",
 				176: "44rem",
 			},
+			colors: {
+				'darkpurple': '#3D1754',
+			}
 		},
 	},
 	darkMode: "class",
