@@ -3,35 +3,40 @@ title: "Home";
 ---
 
 <div class="flex -mt-20 pt-32" id="Home">
-	<div class="grid grid-cols-5 pt-24 pb-24 lg:mb-16 w-screen">
+	<div
+		class="flex-cols md:grid md:grid-cols-5 md:pt-24 pb-24 lg:mb-16 w-screen">
 		<div
-			class="col-start-2 col-span-2 pt-32 text-5xl tracking-tight font-extralight text-left -mr-5">
-			<h2 class="font-bold text-gray-900 dark:text-gray-400">
+			class="md:col-start-2 md:col-span-2 md:pt-32 px-5 md:px-0 text-lg md:text-5xl tracking-tight font-extralight text-center md:text-left -mr-5">
+			<h2 class="font-bold text-gray-900 dark:text-gray-300">
 				<div class="typewritter font-normal leading-normal">
 					<!-- Hi! <br /> -->
-					My name is <br /> 
-					<span class="font-bold text-purple-500">Marc Puig López</span
-					>
+					My name is <br />
+					<span class="font-bold text-purple-500">Marc Puig López</span>
 					<br />
-					and I'm a
+					and I'm a <span class="block md:hidden"></span>
 					<div id="text"></div><div id="cursor"></div>
 				</div>
 			</h2>
 		</div>
-		<!-- <div class="absolute xl:right-80 w-128 h-128 bg-cover z-10" style="background-image:url(../src/utils/img/MarcPhoto2.png)"> -->
 		<img
 			src="../src/utils/img/MarcPhoto2.png"
-			alt="logo"
-			class="w-140 ratio col-start-4 aspect-auto"
+			alt="Fotografía de Marc Puig López"
+			class="w-96 w-140 ratio col-start-4 aspect-auto"
 		/>
-		<!-- </div> -->
 	</div>
 </div>
 
 <style>
+	:global(.light) {
+		--text-color: white;
+	}
+
+	:global(.dark) {
+		--text-color: white;
+	}
+
 	#text {
 		display: inline-block;
-		color: white;
 	}
 
 	#cursor {
@@ -43,14 +48,24 @@ title: "Home";
 		animation: blink 0.75s step-end infinite;
 	}
 
+	@media screen and (max-width: 768px) {
+		#cursor {
+			height: 30px;
+		}
+	}
+
 	@keyframes blink {
 		from,
 		to {
 			background-color: transparent;
 		}
 		50% {
-			background-color: white;
+			background-color: var(--text-color);
 		}
+	}
+
+	img {
+		mask-image: linear-gradient(to bottom, black 70%, transparent);
 	}
 </style>
 

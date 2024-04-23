@@ -1,21 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "./Header.astro";
-import Home from "./Home.astro";
-import AboutMe from "./AboutMe.astro";
-import Projects from "./Projects.astro";
-import Footer from "./Footer.astro";
 
+import Header from "../sections/Header.astro";
+import Home from "../sections/Home.astro";
+import AboutMe from "../sections/AboutMe.astro";
+import Projects from "../sections/Projects.astro";
+import Footer from "../sections/Footer.astro";
+
+import { HeroParallaxProjects } from "../components/HeroParallaxProjects.jsx";
 ---
 
 <Layout title="Marc Puig Portfolio">
 	<Header />
-	<main class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-400 
-				dark:bg-gradient-to-t dark:from-purple-800  dark:to-black
-				font-firaCode ">
+	<main
+		class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-400
+	dark:bg-gradient-to-t dark:from-purple-800 dark:to-black
+	font-firaCode">
 		<Home />
+		<HeroParallaxProjects client:load />
 		<AboutMe />
-		<Projects />
+		<!-- <Projects /> -->
 	</main>
 	<Footer />
 </Layout>
