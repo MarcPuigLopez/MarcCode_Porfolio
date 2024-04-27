@@ -1,5 +1,7 @@
 ---
 title: "Home";
+
+import { Image } from 'astro:assets';
 ---
 
 <div class="flex -mt-20 pt-32" id="Home">
@@ -18,10 +20,13 @@ title: "Home";
 				</div>
 			</h2>
 		</div>
-		<img
-			src="../src/utils/img/MarcPhoto2.png"
-			alt="Fotografía de Marc Puig López"
-			class="w-96 w-140 ratio col-start-4 aspect-auto"
+		<Image
+			src="/src/utils/img/MarcPhoto2.png"
+			alt="Foto de Marc Puig López"
+			class="w-96 ratio col-start-4 aspect-auto"
+			width="384"
+			height="512"
+			loading='eager'
 		/>
 	</div>
 </div>

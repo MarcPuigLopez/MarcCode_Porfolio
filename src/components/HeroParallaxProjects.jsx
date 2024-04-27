@@ -1,4 +1,4 @@
-"use client";
+
 
 import { HeroParallax } from "./ui/hero-parallax";
 
@@ -7,12 +7,12 @@ export function HeroParallaxProjects() {
 }
 export const products = [
 	{
-		title: "Moonbeam",
-		link: "https://gomoonbeam.com",
-		description: "Trabajo",
-		thumbnail:
-			"https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
-		skills: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express.js"],
+		title: "FABINCCI",
+		link: "https://fabincci.netlify.app",
+		description:
+			"Trabajo de final de carrera para la universidad. Página web de una barberia ubicada en Mataró, con un diseño personalizado, registro de clientes y gestión de citas.",
+		thumbnail: "src/utils/img/FabincciProject.png",
+		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 	{
 		title: "Cursor",
@@ -20,7 +20,7 @@ export const products = [
 		description: "Trabajo",
 		thumbnail:
 			"https://aceternity.com/images/products/thumbnails/new/cursor.png",
-		skills: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express.js"],
+		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 	{
 		title: "Rogue",
@@ -28,7 +28,7 @@ export const products = [
 		description: "Trabajo",
 		thumbnail:
 			"https://aceternity.com/images/products/thumbnails/new/rogue.png",
-		skills: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express.js"],
+		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 
 	{
@@ -37,6 +37,6 @@ export const products = [
 		description: "Trabajo",
 		thumbnail:
 			"https://aceternity.com/images/products/thumbnails/new/editorially.png",
-		skills: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Express.js"],
+		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 ];
