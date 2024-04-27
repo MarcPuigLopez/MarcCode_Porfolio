@@ -11,7 +11,7 @@ export const products = [
 		link: "https://fabincci.netlify.app",
 		description:
 			"Trabajo de final de carrera para la universidad. Página web de una barberia ubicada en Mataró, con un diseño personalizado, registro de clientes y gestión de citas.",
-		thumbnail: "src/utils/img/FabincciProject.webp",
+		thumbnail: "/static/img/FabincciProject.webp",
 		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 	{
