@@ -5,14 +5,14 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 const {
 	default: flattenColorPalette,
-  } = require("tailwindcss/lib/util/flattenColorPalette");
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 export default {
 	content: [
 		"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
 		"./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
 		"./src/pages/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    	"./src/components/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
+		"./src/components/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
 	],
 	theme: {
 		extend: {
@@ -29,11 +29,11 @@ export default {
 				176: "44rem",
 			},
 			colors: {
-				'darkpurple': '#3D1754',
+				darkpurple: "#3D1754",
 			},
 			aspectRatio: {
-				'5/4': '5 / 4',
-			}
+				"5/4": "5 / 4",
+			},
 		},
 	},
 	darkMode: "class",
@@ -44,10 +44,10 @@ export default {
 function addVariablesForColors({ addBase, theme }) {
 	let allColors = flattenColorPalette(theme("colors"));
 	let newVars = Object.fromEntries(
-	  Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
 	);
-   
+
 	addBase({
-	  ":root": newVars,
+		":root": newVars,
 	});
-  }
+}
