@@ -6,28 +6,30 @@ import { Image } from 'astro:assets';
 
 <div class="flex -mt-20 pt-32" id="Home">
 	<div
-		class="flex-cols md:grid md:grid-cols-5 md:pt-24 pb-24 lg:mb-16 w-screen">
+		class="flex-cols lg:grid lg:grid-cols-5 lg:pt-24 pb-24 lg:mb-16 w-screen">
 		<div
-			class="md:col-start-2 md:col-span-2 md:pt-32 px-5 md:px-0 text-lg md:text-5xl tracking-tight font-extralight text-center md:text-left -mr-5">
+			class="lg:col-start-2 lg:col-span-2 lg:pt-32 px-5 lg:px-0 text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-tight font-extralight text-center lg:text-left -mr-5">
 			<h2 class="font-bold text-gray-900 dark:text-gray-300">
-				<div class="typewritter font-normal leading-normal">
+				<div class="typewritter font-normal leading-normal whitespace-nowrap">
 					<!-- Hi! <br /> -->
 					My name is <br />
 					<span class="font-bold text-purple-500">Marc Puig López</span>
 					<br />
 					and I'm a <span class="block md:hidden"></span>
-					<div id="text"></div><div id="cursor"></div>
+					<span id="text"></span><div id="cursor"></div>
 				</div>
 			</h2>
 		</div>
-		<Image
-			src="/static/img/MarcPhoto2.webp"
+		<div class="flex justify-center lg:flex-none lg:justify-normal">
+			<Image
+			src="/static/img/MarcPhotoEx.webp"
 			alt="Foto de Marc Puig López"
-			class="w-96 ratio col-start-4 aspect-auto"
-			width="384"
-			height="512"
+			class="lg:ml-20 xl:ml-40 col-start-4 aspect-auto lg:scale-110 xl:scale-125 2xl:scale-150"
+			width="400"
+			height="500"
 			loading='eager'
-		/>
+			/>
+		</div>
 	</div>
 </div>
 
@@ -70,7 +72,7 @@ import { Image } from 'astro:assets';
 	}
 
 	img {
-		mask-image: linear-gradient(to bottom, black 70%, transparent);
+		mask-image: linear-gradient(to bottom, black 92%, transparent);
 	}
 </style>
 

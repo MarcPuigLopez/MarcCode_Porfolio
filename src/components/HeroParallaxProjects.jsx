@@ -15,28 +15,28 @@ export const products = [
 		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 	{
-		title: "Cursor",
+		title: "iDance",
 		link: "https://cursor.so",
-		description: "Trabajo",
+		description: "Página web para la competición de baile iDance Nacional.",
 		thumbnail:
-			"https://aceternity.com/images/products/thumbnails/new/cursor.png",
-		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
+			"/static/img/idanceNacional.png",
+		skills: ["Wordpress", "Elementor", "JavaScript", "CSS", "HTML"],
 	},
 	{
-		title: "Rogue",
+		title: "Quality Machines Profile S.L.",
 		link: "https://userogue.com",
-		description: "Trabajo",
+		description: "Página web para la empresa Quality Machines Profile S.L.",
 		thumbnail:
-			"https://aceternity.com/images/products/thumbnails/new/rogue.png",
-		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
+			"/static/img/qmprofile.png",
+		skills: ["Wordpress", "Elementor", "SEO", "Javascript", "CSS", "HTML"],
 	},
 
 	{
-		title: "Editorially",
+		title: "Vic.Inkk",
 		link: "https://editorially.org",
-		description: "Trabajo",
+		description: "Página web para el estudio de tatuajes Vic.Inkk.",
 		thumbnail:
-			"https://aceternity.com/images/products/thumbnails/new/editorially.png",
-		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
+			"/static/img/vicinkk.png",
+		skills: ["React", "Tailwind", "Astro"],
 	},
 ];

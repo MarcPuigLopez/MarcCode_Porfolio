@@ -15,8 +15,28 @@ export const skillsImg = [
 		name: "HTML",
 	},
 	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAADGklEQVR4nMVWS2sUQRBOVPTi+6CIXsRDFEHQgwgaxQf6AzwIigdz8qR4MpCD6EGUPMQnIiIBbzNVm4fBg5eNISa7VTXZkCxC4klwg/iKGNEkoiM107PbMxOyIQg2hGxvd9dXX9VXVVtT87+Xf8VfQhk6JEBtDCQCNMFIM8F/3SO1epA/6Pt+7aIAxJXjgjwkyH7VPyCPgI4t2Hg2m10mQLfjRviXIGUZ+IkA3WDge+GephNgbY7jLK0KwMjd0SNG+i4gjYNdgxvnul/oKKxl5MuC9NVyqGteoBgDoHzOyW1dCHvP9XaFbI1zwLfmy0FEfajgDGwuOsWVejb+fHxF8r79nSDdTObJc/NHUypKJpmR3ghSi54z8H0GKjHQpCB/ZqQpQcqRQ3UmAteSIKq+mOoCmaZUQw9sRzjDe63zn/2d/avK7x2qE6TZlA1X6u1ctBn0P1YC3ycTyECvK+dyOn6migsiMBPUUuhoS+UCMocX+CUjv6t4I0dieQNptJh2JM62G+cKasd8JpvJhFHUnVgSgR7ahnKY28JIv6OQ5Z7mVify+oORr2uoTWRKFpOQnl7Iu/mdVvI/aO1E9wacgfXx2OfPlEF8v1ZBBGVPCBSATKeZILWbvRcZstuFh3ROgEftwivbyMg2AR4LPiO1z8Ekygn1GZCLVmE9spzpCQrPsAnaiiNrjI1LjHzVRKYvKugKE6RWw2RWUDYN4/CGcgUDfdSQBaECemHAOi2mZ8PvuNfLeDv0ffSWgZvLINquLc+bjFyfWXI9QS41cIbP6xkBnazkjbuNA56RclP5XUYO1NhJC+dDELIpLS4P6JQl18caKmWo94tOcbkAf4rqQlAuBPIO8/Itkm9qzmiC7ZagBk0b0f2kgsTqwsjUnH8hl3ZHuTXsD8cAkpVvPBnVHJRj71JDHET2WUzfCtCIta9UenJpG1FZppod0sxIz8i6tFM8NseU7Kw6uEIgi1GkOuBeQbobTUaVaWoyIrVUBbAXA+8X5FdV5zsGCuNkn1vwClqFK/XqoaolmCnaZYFK4Z6bVaaL/rXyL9df04djmtQPo40AAAAASUVORK5CYII=",
+		name: "Wordpress",
+	},
+	{
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAADo0lEQVR4nM2VbWxTVRjHqwiLr8QvxOgnjYkGX4LM4DZNZqJR3Obgg2u3bEUEIshYJ4EiZkjnlCXIRmAUAYVNcAWS3gP7NMbWrWu7e3fOc05nxa7d7pauXV26vjFeNJHIPObMNCHGl774wX/yfDjP///cX57k3ns0mv+DPGc897ut7gFmZb1/LtEXfs4Q2jmyhllGPum5QFddkuD1VImz6MNZd3nOEGj/7kvc8X1Bj8Ru9CDGU3UJ0Zvk9JVCespzNCcA5/wueuyKo1dib14WD5foXI/Eui9L7IY4i77wRS5rCDF7V9A236FeibX1IXbbdp6tZEd8tf1WKOr7A9ImfJHLGsJa/Dtp62hJP2IBG2IyafGvp61jMrT4y22ITtgQDcKB0bdELmsINI932Sx0lR0xPiCxvXTfeDveN7YWmsc+G5Bou+i7LO58aB6/mBVANk0ug0/VbxwS2+1AlDusI0XQqHaxE3wxNKoX7AjeE/1BRD+CRvU0MXkfyXyLhoAOGgJ6pwQuJ6JJ2TRRBHumPhYebQh8K5/0vOBClDsROEWO7AloM4bQXcGj8gHPs7JEfx1CcJYYp3bQncGXhUd2BAxgnC6WJZiREb09cti7nBinzBkBvCbvEjCEOoetUDOMKFes7F1cH7KodTxvAVL/YyE2hLYriJ5f8BGphvqwpbtOXfDTEts68wr5YLqOSPQcluA3l3n0GbIlfCTlK9un7yWbw6cwglqCKBc5siVsoJtnFjZNS3hjZJdSG1wJCIJUomayKVIGGyKVd2ZgY+QruYM9TRG1AYIYNoTyYVPEmDYE9LEO9bCa5zbMPg/66FbQRzvdG+KP3pmh1bEqXBM9hqtnq7ym4HJ2gt0n5tLbomLucaKNdRFt/CTRxXdj7WwBe58t/qssq7i6lFQmV2Nt9HOiix0nuthFMf/vkNWJh0h5/EVezO/J6GWp4EtYeeIlMa/JVMO6xHqlJtqKS6/lK6WJx+zF0QdcpdceJiVzK1z62f3yunj2v5SU5KpYs/3gGB9smow5jVMB17awz2UMBQabJuID5lEu6yNf5w4pu6q3H/LN2w/6b9mP/zDfjxhP1eB+/89Da5K63CGFN5cplXEffuP6h0pl3OFAjDusbu7aOxlX1ibNvIIv0vwXYgW3nut+Us1T3kl0DUmMK/XTAfzqL6Vck8Nl9XfCZckm/IV/Hr+dzO3K/ScNPcUfxCXXLfi1n9L/srORScPv7nuCL81k6HecY10YPiz4rQAAAABJRU5ErkJggg==",
+		name: "Astro",
+	},
+	{
 		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADA0lEQVR4nO1WW4hNYRQ+g3EZRI0hihelXMaDaFwiLzzgjTDKK5KIkhfXiDfRJE2URon2XuvMOEI8OMk0Y69v7ZkjRzJuuTyYiVzGJRO2/j0zp332ucw0c6ao+ep/2uv/17e+tf7v35HIIAbxP0FjWgIblUpyGowrynJeSQ6CsUKrtXhAk8NGJUhaleFlXYT3ynKsubZ5fEETx+PxYWCcypk4k8g7IdnseV5Rv5NrtRYrg9ITSI2wzGm50TLCVAvCEtMSZfkUjAMj5kSd0v4RYFwMVwiSP0p40qmKLuyOTVxMjAbjuLJ0BNR4rbYu7TMBN+osUsKXfJKD0CAsC1Kka7UcjEeBmF/KcjR+IT7SfK+vqx8Lwk0Q9ic4MbFHEmLLYiXZq6w7leWEktSF5TZJwDhsWdZQn0RMS/wbkq7cRzDugqUt0M7bfVLGJIKN5abP6UTkjrJOTpEnWauMD7kV1NV9IpCmEMtGsLQHKm0NHtx4tXGSuZ5gtITIXs9boWu7czXqrPGXrRUNVsOoXPFN1v1ZyvI4lCCuJLvA2ApGNVi+Br6/0JhOyDjIv/OEPWC8zZTLTLfcckk2dPc6iK6+V/m3JN/QsjyQWpmapYqmss4e9spsHrrkLMt1c0ByLYMI4Y0Z5qSVHJ6xSaM6HYSXgQ0/jGwuyRbjasp6QEnuZfqBnDOVZyVS504BYZVZbtSdmat9ESfqzPDZpbvdMyU5q7azPmklx6SI1mq5Ei6HFEk6tjM7MmBmQ/LNJ2PptBQRW1cqy6tA3Hdl2R70f+OAZoC9Q96QHknA+Dkj2TUDSSV8zjI87YhiW0C50rAPGFc0fQbjiDGern1Pe+V4QRjWyjoPjH3G90OK2GrpOD/O84pA2NGpQM6BlUh/YBnXY+wGy8/Awc9d25nfHWNmwPd3lt/hQTWOGSkE1NaK9GGVDhDOmKfZ3ATfuEL+ryQnI4VEk9VUBkK0d14hNdkMqyBQ0k2mDTmcrs3Yb0H+iPLBVNf52kmVslwycoOxLt+bMYhB/JP4C96vN0zkf7tiAAAAAElFTkSuQmCC",
 		name: "Tailwind",
+	},
+	{
+		link: "",
+		name: "CSS",
+	},
+	{
+		link: "",
+		name: "Elementor",
+	},
+	{
+		link: "",
+		name: "SEO",
 	},
 	{
 		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABQUlEQVR4nO2WvU7DMBSFPSCEhMSLsDLBCzDxFoidkR0KKwLBxt9G7uUVvNb33EodKiYGkICpA/AABLlJaWlCwo8bCeEjeYjte/zJdpJjTFTUhHqXvVll2VOSR2WkIRpIHpSl5b1NnZRkN9TCBRDGTi0ABrRIJZFlE0ggrAx3onay5rShFv+2r0YAjkeAeAnT//0aTkt/F0AnCtsX7QVlOVXCixL6SnJsT+xcYwBKclb405HsNwiAZ//sErf4G5+fA7DcZX2y9aWAERzgyq2D5DXf+hthWWsUwKvDbhUk12NJZ8NM60OknxRaa2dA2MwA5DYYAPJI5mPUe5Ri3JfN7SRuKTsK9Ks9q30+yKfXYqrF9nAchMOS8YNRfVU6HvnUxfKW3wlP7IvGb3v3vDvvPz7K8jRoJEe+rwqgzCcqyuR6A3m9i+NHX+FyAAAAAElFTkSuQmCC",
@@ -74,11 +94,11 @@ export const HeroParallax = ({
 	const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
 	const translateX = useSpring(
-		useTransform(scrollYProgress, [0, 1], [-300, 1000]),
+		useTransform(scrollYProgress, [0, 1], [-600, 1800]),
 		springConfig
 	);
 	const translateXReverse = useSpring(
-		useTransform(scrollYProgress, [0, 1], [1000, -700]),
+		useTransform(scrollYProgress, [0, 1], [800, -1100]),
 		springConfig
 	);
 	const rotateX = useSpring(
@@ -172,7 +192,19 @@ export const ProductCard = ({
 				y: -20,
 			}}
 			key={product.title}
-			className="group/product h-[37rem] w-[56rem] relative flex-shrink-0">
+			className="group/product relative flex-shrink-0
+						h-[35rem] 
+						md:h-[35rem] 
+						lg:h-[20rem] 
+						xl:h-[25rem] 
+						2xl:h-[30rem] 
+
+						w-[15rem] 
+						md:w-[20rem] 
+						lg:w-[35rem] 
+						xl:w-[42rem] 
+						2xl:w-[50rem] 
+						">
 			<a href={product.link} className="block group-hover/product:shadow-2xl ">
 				<img
 					src={product.thumbnail}
@@ -184,26 +216,29 @@ export const ProductCard = ({
 				/>
 			</a>
 			<div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-70 bg-black pointer-events-none"></div>
-			<div className="absolute bottom-0 p-5 h-44 w-full opacity-0 group-hover/product:opacity-100 text-white bg-black transition-all">
+			<div className="absolute bottom-0 p-5 pb-10  w-full opacity-0 group-hover/product:opacity-100 text-white bg-black transition-all">
 				<div className="">
 					<h2 className="">{product.title}</h2>
 					<h3 className="pl-5 text-sm">{product.description}</h3>
-					<div className="pt-5">
+					<div className="pt-5 mb-15">
 						<h2> Skills </h2>
 						<h3 className="text-white text-center">
-							<div className="flex items-center content-center justify-center ">
+							<div className="flex space-x-5 justify-evenly">
 								{product.skills.map((skill) => (
 									<>
 										{skillsImg.map((img) => {
 											if (img.name === skill) {
 												return (
-													<img
-														key={product.title + img.name}
-														loading="lazy"
-														className="mx-auto mb-1 mt-3"
-														src={img.link}
-														alt={skill}
-													/>
+													<div className="flex-col items-center content-center justify-center">
+														<img
+															key={product.title + img.name}
+															loading="lazy"
+															className="mx-auto mb-1 mt-3"
+															src={img.link}
+															alt={skill}
+														/>
+														<h4 className="text-white text-center text-sm">{skill}</h4>
+													</div>
 												);
 											} else return;
 										}, [])}
