@@ -6,8 +6,8 @@ import BurgerIcon from "../components/burger-icon.astro";
 ---
 
 <header
-	class="header pt-10 md:py-8 md:mx-auto items-center justify-between align-middle sticky top-0 lg:py-2 px-10 xl:px-72 2xl:px-96 flex
-		 transition-all duration-300 z-20 scale-110">
+	class="header w-[95vw] md:mx-auto items-center justify-between align-middle sticky top-0 px-10 md:px-0 xl:px-52
+	flex transition-all duration-300 z-20 scale-100">
 	<div class="">
 		<img
 			srcset="/static/img/blackLogo.webp"
@@ -19,9 +19,6 @@ import BurgerIcon from "../components/burger-icon.astro";
 			alt="Marc Puig Light Logo"
 			class="dark:hidden block w-16 h-16 mx-3 md:mx-16"
 		/>
-	</div>
-	<div class="block md:hidden">
-		<BurgerIcon class="text-black dark:text-white transition" />
 	</div>
 
 	<div class="hidden md:block">
@@ -51,8 +48,8 @@ import BurgerIcon from "../components/burger-icon.astro";
 		</nav>
 	</div>
 
-	<div class="hidden md:block">
-		<nav class="hidden sm:flex flex-wrap justify-center">
+	<div class="flex items-center justify-center">
+		<nav class="flex flex-wrap justify-center">
 			<a
 				class=""
 				aria-label="Instagram"
@@ -115,7 +112,7 @@ import BurgerIcon from "../components/burger-icon.astro";
 				</svg>
 			</a>
 
-			<div class="pl-5">
+			<div class="px-5">
 				<ThemeIcon />
 			</div>
 		</nav>
@@ -141,6 +138,7 @@ import BurgerIcon from "../components/burger-icon.astro";
 			background-size: 100% 1px;
 			background-position: 0 100%;
 		}
+
 	</style>
 </header>
 
@@ -150,13 +148,13 @@ import BurgerIcon from "../components/burger-icon.astro";
 			if (window.scrollY > 50) {
 				document
 					.querySelector(".header")
-					.classList.add("scale-100", "backdrop-blur-md");
-				document.querySelector(".header").classList.remove("scale-110");
+					.classList.add("backdrop-blur-md");
+				document.querySelector(".header").classList.remove("scale-100");
 			} else {
-				document.querySelector(".header").classList.add("scale-110");
+				document.querySelector(".header").classList.add("scale-100");
 				document
 					.querySelector(".header")
-					.classList.remove("scale-100", "backdrop-blur-md");
+					.classList.remove("backdrop-blur-md");
 			}
 		}
 

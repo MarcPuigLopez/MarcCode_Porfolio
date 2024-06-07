@@ -1,5 +1,3 @@
-
-
 import { HeroParallax } from "./ui/hero-parallax";
 
 export function HeroParallaxProjects() {
@@ -11,32 +9,33 @@ export const products = [
 		link: "https://fabincci.netlify.app",
 		description:
 			"Trabajo de final de carrera para la universidad. Página web de una barberia ubicada en Mataró, con un diseño personalizado, registro de clientes y gestión de citas.",
-		thumbnail: "/static/img/FabincciProject.webp",
+		thumbnail: "/static/img/fabincci.webp",
+		mobileThumbnail: "/static/img/fabincci_mobil.png",
 		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
 	},
 	{
 		title: "iDance",
-		link: "https://cursor.so",
+		link: "https://idancenacional.com",
 		description: "Página web para la competición de baile iDance Nacional.",
-		thumbnail:
-			"/static/img/idanceNacional.png",
+		thumbnail: "/static/img/idanceNacional.png",
+		mobileThumbnail: "/static/img/idanceNacional_mobil.png",
 		skills: ["Wordpress", "Elementor", "JavaScript", "CSS", "HTML"],
 	},
 	{
 		title: "Quality Machines Profile S.L.",
-		link: "https://userogue.com",
+		link: "https://qmprofile.com",
 		description: "Página web para la empresa Quality Machines Profile S.L.",
-		thumbnail:
-			"/static/img/qmprofile.png",
+		thumbnail: "/static/img/qmprofile.png",
+		mobileThumbnail: "/static/img/qmprofile_mobil.png",
 		skills: ["Wordpress", "Elementor", "SEO", "Javascript", "CSS", "HTML"],
 	},
 
 	{
 		title: "Vic.Inkk",
-		link: "https://editorially.org",
+		link: "https://vic-ink.vercel.app",
 		description: "Página web para el estudio de tatuajes Vic.Inkk.",
-		thumbnail:
-			"/static/img/vicinkk.png",
+		thumbnail: "/static/img/vicinkk.png",
+		mobileThumbnail: "/static/img/vicinkk_mobil.png",
 		skills: ["React", "Tailwind", "Astro"],
 	},
 ];

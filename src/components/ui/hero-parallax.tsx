@@ -27,15 +27,15 @@ export const skillsImg = [
 		name: "Tailwind",
 	},
 	{
-		link: "",
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAADxElEQVR4nL2V3U9bdRjHH1/vGq+8U2+GMV5wi4nGGP8Eb0ZiSLwhwQvchYnxjsSEaYduYVvErQbYmJNqqXRGB+W0py/Qt9PTFgasFKpY1uxQkCalTU/bc8rX/H6O8tKz2jjjkzxp+jt9vp9fn7dD9H8agKcB9AD49D/wHqZnBDmnazoKucITu67pkCTpQhOkWq2O5LN5SNYwQhPBf+2SNQyuI0lOInr+BETTtM+Ku0WEbgYwe/7uY909LGDe4jN096U5hCYCKP5ZhCAIPxLRM6fT9aFaVCFZIy0h/us+yPaooXuuuiFZJVSKKmw223Wjmryn13TEpuSGoOuiwG9+3GVrFOvzqROeFO9ziHvYhZhdBtOxWCyDRpA3ASDuiDUgoVvBpttml7M4bfu5An8mfOVEYjrGzwYHB88ZQc6wh4s/J45Sc83bVNj0wnqjiyqlChfc29rjkLkLszyeWW9v71kjiIk9vPfLYts12fktxwVzG9uQp6Jwnp/B0q+L/Kyzs/Ntw4HUdV1dcS7D+cVMW5B8Ns8FsytZSD9EeByLr9VqFSLqNIRUq9Vsyr8G4UsnF/R+LbZVkz9im4jcDkEYcoLFFwqFHBG9aghRVTW+Gd3k/c4g4hW3AeRBE2QjsI7QrQBclwSweEVR1onoZUNIuVyeUZIPIV52t5UurapxyH33KgLj8/BccUFZU5BOp2UievFxkHHWKb5rXi7IuuWwq05DYtNy45/cu7uEeYufx+Uf7CEej7uJyGQI0TTt8/2dfQTHF7ggK+ThreeGnCcgy87lBoQBfd94ELwRAIsXRfEnInrOEALgo3KhjMjk0WqJ2qQGKPRdEEnXKkp7JRwcHHAAm+6/V4oIaTIMtVCG3W4fNQQ8gpzVKhpiU9Gj9Hzr5/vMqLvYMLIasHNx2AXZJvM6jY6OmltB3sEBEJ8+Wi2HztraO+JBUkwik8jwdB3vOuHiHI9j8Waz+eNWkNf5armTaKu7onYJ4dsh+C1eXj8Wx6y/v7+nFeSFer1eX/MmecrY7mIDdhziGxGxMLYA8aqbd58wNMu7SrZFweLq9bre1dX1LrUyRVEm2G1qag27mztY8ySRuBNH5PswzzsTFi+7+IZm6WGNsPv7Dv89M0mSZojoTEsIET3V19f3lsPhMKdSqVClUimxPJfyJWwtbWFVWOGf7Ds7r9VqaiaTWXY4HDe6u7vfJ6LXmMY/QY7bsx0dHS+NjY19EAwGJ7e3t9OaplUVRdkQRdE+MDDwiclkeoOIXml6nz+BsSnueOTGE21gfwFCWKUAV3IYOQAAAABJRU5ErkJggg==",
 		name: "CSS",
 	},
 	{
-		link: "",
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAVklEQVR4nO3WsQkAIRBE0e2/Fyu535PmFy2iji7zwMTowxgYYXYj2td3nPcCYhEHUGYCfvfZx1Y3IKtuAOoJUAdk1Q1APQGnA2Y5gGcnQP0lQxVgFgcNwKvAp5M4PKcAAAAASUVORK5CYII=",
 		name: "Elementor",
 	},
 	{
-		link: "",
+		link: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqElEQVR4nO2UQQ6CMBREey70AngQ3eiaK3gX/+cgf8YTuJNwDTCQYEgglMSvIaaTzKJpO69/Fg0habOC4EBBRUX7sQWVlZZPIP3GzTKnB+8oeE4hijZ6WVEMjp2dzVsD4aiSn0GwMJkbhAuTbQvCSCgT5E/rErsOXrOOQqD26P6c4CCW3Hd5o3CcXH5enfdd7NhTvwWAWPNuB4oLxGpnQA3B2aP+pOCuF6JWgh8v6jcCAAAAAElFTkSuQmCC",
 		name: "SEO",
 	},
 	{
@@ -80,6 +80,7 @@ export const HeroParallax = ({
 		link: string;
 		description: string;
 		thumbnail: string;
+		mobileThumbnail: string;
 		skills: string[];
 	}[];
 }) => {
@@ -94,11 +95,11 @@ export const HeroParallax = ({
 	const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
 	const translateX = useSpring(
-		useTransform(scrollYProgress, [0, 1], [-600, 1800]),
+		useTransform(scrollYProgress, [0, 1], [-700, 1600]),
 		springConfig
 	);
 	const translateXReverse = useSpring(
-		useTransform(scrollYProgress, [0, 1], [800, -1100]),
+		useTransform(scrollYProgress, [0, 1], [1500, -1100]),
 		springConfig
 	);
 	const rotateX = useSpring(
@@ -120,7 +121,7 @@ export const HeroParallax = ({
 	return (
 		<div
 			ref={ref}
-			className="h-[250vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
+			className="md:h-[160rem] lg:h-[100rem] xl:h-[110rem] 2xl:h-[120rem] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
 			<Header />
 			<motion.div
 				style={{
@@ -179,6 +180,7 @@ export const ProductCard = ({
 		link: string;
 		description: string;
 		thumbnail: string;
+		mobileThumbnail: string;
 		skills: string[];
 	};
 	translate: MotionValue<number>;
@@ -193,22 +195,30 @@ export const ProductCard = ({
 			}}
 			key={product.title}
 			className="group/product relative flex-shrink-0
-						h-[35rem] 
-						md:h-[35rem] 
+						h-[40rem] 
+						md:h-[40rem] 
 						lg:h-[20rem] 
 						xl:h-[25rem] 
 						2xl:h-[30rem] 
 
-						w-[15rem] 
-						md:w-[20rem] 
+						w-[21rem] 
+						md:w-[21rem] 
 						lg:w-[35rem] 
 						xl:w-[42rem] 
 						2xl:w-[50rem] 
 						">
-			<a href={product.link} className="block group-hover/product:shadow-2xl ">
+			<a href={product.link} target="_blank" rel="noopener noreferrer" className="block group-hover/product:shadow-2xl ">
+				<img
+					src={product.mobileThumbnail}
+					className="visible lg:invisible object-cover object- absolute h-full w-full inset-0"
+					width="600"
+					height="600"
+					loading="lazy"
+					alt={product.title}
+				/>
 				<img
 					src={product.thumbnail}
-					className="object-cover object- absolute h-full w-full inset-0"
+					className="invisible lg:visible object-cover object- absolute h-full w-full inset-0"
 					width="600"
 					height="600"
 					loading="lazy"
@@ -216,7 +226,7 @@ export const ProductCard = ({
 				/>
 			</a>
 			<div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-70 bg-black pointer-events-none"></div>
-			<div className="absolute bottom-0 p-5 pb-10  w-full opacity-0 group-hover/product:opacity-100 text-white bg-black transition-all">
+			<div className="absolute bottom-0 p-5 pb-10  w-full opacity-0 group-hover/product:opacity-100 text-white bg-black transition-all pointer-events-none">
 				<div className="">
 					<h2 className="">{product.title}</h2>
 					<h3 className="pl-5 text-sm">{product.description}</h3>
@@ -232,7 +242,7 @@ export const ProductCard = ({
 													<div className="flex-col items-center content-center justify-center">
 														<img
 															key={product.title + img.name}
-															loading="lazy"
+															loading="eager"
 															className="mx-auto mb-1 mt-3"
 															src={img.link}
 															alt={skill}
