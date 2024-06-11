@@ -1,0 +1,90 @@
+---
+title: "Projects";
+
+export const products = [
+	{
+		title: "FABINCCI",
+		link: "https://fabincci.netlify.app",
+		description:
+			"Trabajo de final de carrera para la universidad. Página web de una barberia ubicada en Mataró, con un diseño personalizado, registro de clientes y gestión de citas.",
+		thumbnail: "/static/img/fabincci.webp",
+		mobileThumbnail: "/static/img/fabincci_mobil.png",
+		skills: ["React", "Tailwind", "Node", "Mongo", "Express"],
+	},
+	{
+		title: "iDance",
+		link: "https://idancenacional.com",
+		description: "Página web para la competición de baile iDance Nacional.",
+		thumbnail: "/static/img/idanceNacional.png",
+		mobileThumbnail: "/static/img/idanceNacional_mobil.png",
+		skills: ["Wordpress", "Elementor", "JavaScript", "CSS", "HTML"],
+	},
+	{
+		title: "Quality Machines Profile S.L.",
+		link: "https://qmprofile.com",
+		description: "Página web para la empresa Quality Machines Profile S.L.",
+		thumbnail: "/static/img/qmprofile.png",
+		mobileThumbnail: "/static/img/qmprofile_mobil.png",
+		skills: ["Wordpress", "Elementor", "SEO", "Javascript", "CSS", "HTML"],
+	},
+
+	{
+		title: "Vic.Inkk",
+		link: "https://vic-ink.vercel.app",
+		description: "Página web para el estudio de tatuajes Vic.Inkk.",
+		thumbnail: "/static/img/vicinkk.png",
+		mobileThumbnail: "/static/img/vicinkk_mobil.png",
+		skills: ["React", "Tailwind", "Astro"],
+	},
+];
+---
+
+<section id="ProjectsMobile">
+	<div class="px-10 md:px-15">
+		<div id="Projects" aria-hidden class="absolute top-0"></div>
+		<div
+			class="max-w-7xl relative mx-auto py-30 px-4 w-full left-0 top-0">
+			<h1 class="text-2xl md:text-7xl font-bold">
+				My Projects <br />
+			</h1>
+			<p
+				class="max-w-2xl text-base md:text-xl mt-8 text-justify dark:text-neutral-200">
+				Aquí encontrarás algunos de los proyectos en los que he trabajado. Haz
+				clic en las imagenes para obtener más detalles. <br />
+			</p>
+		</div>
+	</div>
+
+	<div class="min-h-screen">
+		<main>
+			<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+				<div class="p-5 grid grid-cols-1 gap-10">
+					{
+						products.map((product) => (
+							<div class="dark:bg-black bg-white overflow-hidden shadow rounded-lg text-justify">
+								<img
+									src={product.thumbnail}
+									alt={product.title}
+									class="w-full h-114 sm:h-144 object-cover"
+								/>
+								<div class="px-4 py-4">
+									<h2 class="text-lg font-semibold dark:text-gray-200">
+										{product.title}
+									</h2>
+									<p class="pl-2 text-sm dark:text-gray-500 py-2">
+										{product.description}
+									</p>
+									<src
+										href="/proyecto1"
+										class="mt-2 text-sm font-medium text-indigo-400 hover:text-indigo-500">
+										Ver más
+									</src>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</main>
+	</div>
+</section>

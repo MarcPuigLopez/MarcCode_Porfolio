@@ -4,9 +4,11 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header.astro";
 import Home from "../sections/Home.astro";
 import AboutMe from "../sections/AboutMe.astro";
+import { HeroParallaxProjects } from "../components/HeroParallaxProjects.jsx";
+import ProjectsMobile from "../sections/ProjectsMobile.astro";
 import Footer from "../sections/Footer.astro";
 
-import { HeroParallaxProjects } from "../components/HeroParallaxProjects.jsx";
+
 ---
 
 <Layout title="Marc Puig Portfolio">
@@ -16,7 +18,12 @@ import { HeroParallaxProjects } from "../components/HeroParallaxProjects.jsx";
 	dark:bg-gradient-to-t dark:from-purple-800 dark:to-black
 	font-firaCode">
 		<Home />
-		<HeroParallaxProjects client:idle />
+		<div class="block lg:hidden">
+			<ProjectsMobile />
+		</div>
+		<div class="hidden lg:block">
+			<HeroParallaxProjects client:load />
+		</div>
 		<AboutMe />
 	</main>
 	<Footer />

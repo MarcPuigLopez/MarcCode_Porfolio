@@ -4,9 +4,9 @@ title: "Home";
 import { Image } from 'astro:assets';
 ---
 
-<div class="w-[95vw] h-[70vh] flex -mt-20 pt-32" id="Home">
+<div class="w-[95vw] h-[70vh] flex -mt-20 pt-32 overflow-clip" id="Home">
 	<div
-		class="flex-cols lg:grid lg:grid-cols-5 lg:pt-24 pb-24 lg:mb-16 w-screen">
+		class="flex-cols lg:grid lg:grid-cols-5 lg:pt-24  lg:mb-16 w-screen">
 		<div
 			class="lg:col-start-2 lg:col-span-2 lg:pt-32 lg:px-0 text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl tracking-tight font-extralight text-center lg:text-left -mr-5">
 			<h2 class="font-bold text-gray-900 dark:text-gray-300">
@@ -15,18 +15,16 @@ import { Image } from 'astro:assets';
 					My name is <br />
 					<span class="font-bold text-purple-500">Marc Puig López</span>
 					<br />
-					and I'm a <span class="block md:hidden"></span>
+					and I'm a <span class="inline lg:hidden"><br/></span>
 					<span id="text"></span><div id="cursor"></div>
 				</div>
 			</h2>
 		</div>
-		<div class="flex justify-center lg:flex-none lg:justify-normal">
-			<Image
-			src="/static/img/MarcPhotoEx.webp"
+		<div class="mx-auto w-96 sm:w-96 md:w-100 lg:w-100">
+			<img
+			src="/static/img/MarcPhotoEx.png"
 			alt="Foto de Marc Puig López"
-			class="lg:ml-20 xl:ml-40 col-start-4 aspect-auto lg:scale-110 xl:scale-125 2xl:scale-150"
-			width="400"
-			height="500"
+			class="ml-5 lg:ml-0 xl:ml-30 2xl:ml-40 col-start-4 aspect-auto lg:scale-100 xl:scale-125 2xl:scale-125"
 			loading='eager'
 			/>
 		</div>
