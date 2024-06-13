@@ -18,7 +18,7 @@ export const products = [
 		link: "https://idancenacional.com",
 		description: "Página web para la competición de baile iDance Nacional.",
 		thumbnail: "/static/img/idanceNacional.png",
-		mobileThumbnail: "/static/img/idanceNacional_mobil.png",
+		mobileThumbnail: "/static/img/idanceNacional_mobil.jpeg",
 		skills: ["Wordpress", "Elementor", "JavaScript", "CSS", "HTML"],
 	},
 	{

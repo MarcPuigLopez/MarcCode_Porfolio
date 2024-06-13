@@ -27,6 +27,7 @@ export default {
 				144: "36rem",
 				160: "40rem",
 				176: "44rem",
+				192: "48rem",
 			},
 			colors: {
 				darkpurple: "#3D1754",

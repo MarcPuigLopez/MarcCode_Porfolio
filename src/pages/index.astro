@@ -14,14 +14,14 @@ import Footer from "../sections/Footer.astro";
 <Layout title="Marc Puig Portfolio">
 	<Header />
 	<main
-		class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-200 to-gray-400
-	dark:bg-gradient-to-t dark:from-purple-800 dark:to-black
+		class=" from-purple-400 via-purple-300 to-purple-200
+	bg-gradient-to-t dark:from-purple-800 dark:to-black
 	font-firaCode">
 		<Home />
-		<div class="block lg:hidden">
+		<div class="block min-[1025px]:hidden">
 			<ProjectsMobile />
 		</div>
-		<div class="hidden lg:block">
+		<div class="hidden min-[1025px]:block">
 			<HeroParallaxProjects client:load />
 		</div>
 		<AboutMe />
