@@ -89,7 +89,7 @@ const skillsImg = [
 	<section class="p-5 md:w-3/5">
 		<div>
 			<h1 class="text-3xl font-bold mb-4">Sobre mí</h1>
-			<p class="text-gray-700 dark:text-gray-300 text-justify pl-3 pr-10">
+			<p class="text-gray-700 dark:text-gray-300 pl-3 pr-10">
 				¡Hola! Mi nombre es <b>Marc Puig López</b>, y soy licenciado en 
 				Ingeniería Informática de Gestión y Sistemas de Información.
 
@@ -122,15 +122,15 @@ const skillsImg = [
 					class="gap-5 w-full mx-auto grid grid-cols-5 bg-gray-200 dark:bg-purple-900 rounded-md p-5 pt-2 dark:bg-transparent">
 					{
 						skillsImg.map((skill) => (
-							<div class="mx-auto grid content-between">
+							<div class="mx-auto align-middle grid content-between">
 								<>
 									<img
 										loading="lazy"
-										class="m-auto"
+										class="m-auto py-3 sm:py-0 md:py-3 lg:py-0 w-8 h-15 "
 										src={skill.link}
 										alt={skill.name}
 									/>
-									<span class="invisible sm:visible  md:invisible lg:visible"> {skill.name}</span>
+									<span class="hidden sm:block  md:hidden lg:block"> {skill.name}</span>
 								</>
 							</div>
 						))
